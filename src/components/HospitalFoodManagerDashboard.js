@@ -388,13 +388,13 @@ const HospitalFoodManagerDashboard = () => {
   const fetchData = async () => {
     try {
       const deliveriesResponse = await axios.get(
-        "http://localhost:5000/api/dashboard/mealStatus"
+        "https://food-delivery-4xi3.onrender.com/api/dashboard/mealStatus"
       );
       const delayedResponse = await axios.get(
-        "http://localhost:5000/api/dashboard/mealStatus"
+        "https://food-delivery-4xi3.onrender.com/api/dashboard/mealStatus"
       );
       const patientsResponse = await axios.get(
-        "http://localhost:5000/api/dashboard/patients"
+        "https://food-delivery-4xi3.onrender.com/api/dashboard/patients"
       );
 
       setDeliveries(deliveriesResponse.data.deliveries);
@@ -420,7 +420,7 @@ const HospitalFoodManagerDashboard = () => {
       if (editPatientId) {
         // Edit existing patient
         const response = await axios.put(
-          `http://localhost:5000/api/updatePatient/${editPatientId}`,
+          `https://food-delivery-4xi3.onrender.com/api/updatePatient/${editPatientId}`,
           newPatient
         );
         console.log("Patient updated successfully", response.data);
@@ -434,7 +434,7 @@ const HospitalFoodManagerDashboard = () => {
       } else {
         // Add new patient
         const response = await axios.post(
-          "http://localhost:5000/api/addPatient",
+          "https://food-delivery-4xi3.onrender.com/api/addPatient",
           newPatient
         );
         console.log("Patient added successfully", response.data);
@@ -472,7 +472,7 @@ const HospitalFoodManagerDashboard = () => {
   const handleDeleteClick = async (patientId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/deletePatient/${patientId}`
+        `https://food-delivery-4xi3.onrender.com/api/deletePatient/${patientId}`
       );
       setPatients((prev) =>
         prev.filter((patient) => patient._id !== patientId)

@@ -11,7 +11,7 @@ const DeliveryPersonnelDashboard = () => {
     const fetchInProgressDeliveries = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/dashboard/getInProgressDeliveries" // Fetch deliveries with "In Progress" status
+          "https://food-delivery-4xi3.onrender.com/api/dashboard/getInProgressDeliveries" // Fetch deliveries with "In Progress" status
         );
         console.log(response.data); // Logging the response for debugging
         setDeliveries(response.data); // Set the fetched deliveries
@@ -28,7 +28,7 @@ const DeliveryPersonnelDashboard = () => {
     try {
       const updatedMealStatus = { deliveryStatus: newStatus };
       await axios.put(
-        `http://localhost:5000/api/dashboard/updateMealStatus/${mealId}`,
+        `https://food-delivery-4xi3.onrender.com/api/dashboard/updateMealStatus/${mealId}`,
         updatedMealStatus
       );
       // Update the delivery status locally
@@ -61,7 +61,7 @@ const DeliveryPersonnelDashboard = () => {
 
       // Updating the meal delivery status and adding notes
       await axios.put(
-        `http://localhost:5000/api/delivery/markDelivered/${deliveryId}`,
+        `https://food-delivery-4xi3.onrender.com/api/delivery/markDelivered/${deliveryId}`,
         deliveryData
       );
 

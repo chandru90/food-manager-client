@@ -118,11 +118,11 @@ const InnerPantryDashboard = () => {
     const fetchData = async () => {
       try {
         const mealStatusResponse = await axios.get(
-          "http://localhost:5000/api/dashboard/mealStatus"
+          "https://food-delivery-4xi3.onrender.com/api/dashboard/mealStatus"
         );
 
         const deliveryPersonnelResponse = await axios.get(
-          "http://localhost:5000/api/dashboard/deliveryPersonnel"
+          "https://food-delivery-4xi3.onrender.com/api/dashboard/deliveryPersonnel"
         );
 
         setMealStatus(mealStatusResponse.data.deliveries);
@@ -147,7 +147,7 @@ const InnerPantryDashboard = () => {
     try {
       const updatedMealStatus = { deliveryStatus: newStatus };
       await axios.put(
-        `http://localhost:5000/api/dashboard/updateMealStatus/${mealId}`,
+        `https://food-delivery-4xi3.onrender.com/api/dashboard/updateMealStatus/${mealId}`,
         updatedMealStatus
       );
       setMealStatus((prevState) =>
@@ -165,7 +165,7 @@ const InnerPantryDashboard = () => {
     try {
       const updatedMealStatus = { deliveryStatus: "Delivered" };
       await axios.put(
-        `http://localhost:5000/api/dashboard/updateMealStatus/${mealId}`,
+        `https://food-delivery-4xi3.onrender.com/api/dashboard/updateMealStatus/${mealId}`,
         updatedMealStatus
       );
       setMealStatus((prevState) =>

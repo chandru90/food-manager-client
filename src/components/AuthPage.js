@@ -15,7 +15,7 @@ const AuthPage = ({ onLogin }) => {
       if (username && password && role) {
         try {
           const response = await axios.post(
-            "http://localhost:5000/api/auth/register",
+            "https://food-delivery-4xi3.onrender.com/api/auth/register",
             {
               username,
               password,
@@ -35,7 +35,7 @@ const AuthPage = ({ onLogin }) => {
       if (username && password) {
         try {
           const response = await axios.post(
-            "http://localhost:5000/api/auth/login",
+            "https://food-delivery-4xi3.onrender.com/api/auth/login",
             {
               username,
               password,
